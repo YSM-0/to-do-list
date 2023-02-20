@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+:root {
+    font-family: Lobster, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --primary: #1B9AAA;
+    --gray: #333533;
+    --black: #242423;
+    --white: #f3fbfc;
+    font-size: calc(1vw + 1rem);
+}
+
+.page-container {
+    background-color: var(--white);
+}
+
+.header {
+    height: 100px;
+    display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--black);
+    border-bottom: 2px solid var(--black);
+    box-shadow: 0px 0px 5px 0px var(--black);
+}
+
+.buttons-header {
+    position: absolute;
+    right: 0;
+    margin-right: 10vw;
+    font-size: 0.5rem;
+}
+
+#sign-up {
+    all: unset;
+    padding: 5px;
+    color: var(--primary);
+    width: 60px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+#sign-up:hover {
+    color: var(--black);
+}
+
+#log-in {
+    all: unset;
+    border: 2px solid var(--black);
+    border-radius: 0.25rem;
+    padding: 5px;
+    background-color: var(--primary);
+    color: var(--white);
+    width: 60px;
+    text-align: center;
+}
+
+#log-in:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.footer {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black);
+    color: var(--white);
+    font-size: 0.5rem;
+}
+
+.content {
+    height: calc(100vh - 150px);
+}
