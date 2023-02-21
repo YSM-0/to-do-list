@@ -1,0 +1,1 @@
+(()=>{"use strict";!function(){const e=document.querySelector(".main-content"),t=document.createElement("ul"),d=document.createElement("a"),n=document.createElement("p");t.classList.add("to-do-grid"),d.classList.add("add-task","item"),e.appendChild(t),t.appendChild(d),d.appendChild(n),n.textContent="+ Add a Task"}()})();
