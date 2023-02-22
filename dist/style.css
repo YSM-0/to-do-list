@@ -133,7 +133,7 @@
 
 .to-do-grid {
     display: grid;
-    grid-template-rows: repeat(auto-fit, minmax(30px, 50px));
+    grid-template-rows: repeat(auto-fill, 40px);
     align-items: center;
     width: 80%;
     margin-top: 50px;
@@ -141,6 +141,8 @@
     border: 1px solid var(--gray);
     transition: 500ms;
     padding-top: 2%;
+    padding-bottom: 2%;
+    gap: 1px;
 }
 
 .to-do-grid:hover {
@@ -152,6 +154,10 @@
     padding-left: 20%;
     padding-right: 20%;
     font-size: 0.6rem;
+    height: 40px;
+    border-bottom: 1px solid var(--gray);
+    display: flex;
+    align-items: center;
 }
 
 .add-task {
@@ -159,10 +165,39 @@
     color: var(--gray);
     text-align: center;
     transition: 200ms;
+    font-size: 0.5rem;
 }
 
 .add-task:hover {
     color: var(--primary);
     letter-spacing: 2px;
     transition: 150ms;
+}
+
+#form-button {
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    border: 1px solid var(--primary);
+
+}
+
+.form {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.input {
+    max-width: 100px;
+    min-width: none;
+}
+
+.select {
+    max-width: 80px;
+}
+
+.to-do-div {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 2fr 3fr 1fr;
 }

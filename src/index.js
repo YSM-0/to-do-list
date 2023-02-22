@@ -1,3 +1,6 @@
-import { init } from "./script";
+import { init, displayForm, toDoList } from "./script";
 
 init()
+
+displayForm()
+
