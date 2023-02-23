@@ -24,6 +24,9 @@ class toDo {
         toDoDiv.appendChild(description)
         toDoDiv.appendChild(dueDate)
 
+        title.classList.add('task-title')
+        description.classList.add('task-description')
+        dueDate.classList.add('task-due-date')
         toDoDiv.classList.add('to-do-div')
 
         title.textContent = this.title
@@ -31,6 +34,12 @@ class toDo {
         dueDate.textContent = this.dueDate
 
         formParent.replaceChild(toDoDiv, form)
+
+        if (this.priority === 'Urgent') {
+            toDoDiv.parentElement.style.backgroundColor = 'rgba(207, 0, 17, 0.33)'
+        } else if (this.priority === 'Normal') {
+            toDoDiv.parentElement.style.backgroundColor = 'rgba(207, 198, 35, 0.33)'
+        }
     }
 }
 
@@ -110,7 +119,6 @@ const displayForm = function () {
         const task = new toDo(title, description, dueDate, priority)
 
         task.submit()
-        console.log(toDoList)
         task.appendToGrid()
     })
 }

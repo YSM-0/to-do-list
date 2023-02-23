@@ -177,8 +177,14 @@
 #form-button {
     background-color: var(--primary);
     border-radius: 0.5rem;
-    border: 1px solid var(--primary);
+    border: 2px solid var(--primary);
+    width: 60px;
+    transition: 150ms;
 
+}
+
+#form-button:hover {
+    background-color: var(--white);
 }
 
 .form {
@@ -200,4 +206,12 @@
     display: grid;
     width: 100%;
     grid-template-columns: 2fr 3fr 1fr;
+    font-size: 0.5rem;
+    vertical-align: middle;
+}
+
+.task-description {
+    font-style: italic;
+    font-size: 0.45rem;
+    color: var(--gray);
 }
