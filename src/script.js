@@ -90,7 +90,7 @@ const init = function() {
     
     text.textContent = '+ Add a Task'
 
-    addTask.addEventListener('click', () => {
+    text.addEventListener('click', () => {
         displayForm()
     })
 }

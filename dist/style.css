@@ -174,7 +174,11 @@
     font-size: 0.5rem;
 }
 
-.add-task:hover {
+.add-task >p {
+    transition: 250ms;
+}
+
+.add-task >p:hover {
     color: var(--primary);
     letter-spacing: 2px;
     transition: 150ms;
