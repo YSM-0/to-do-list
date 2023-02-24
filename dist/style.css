@@ -151,13 +151,19 @@
 }
 
 .item {
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 10%;
+    padding-right: 10%;
     font-size: 0.6rem;
     height: 40px;
     border-bottom: 1px solid var(--gray);
     display: flex;
     align-items: center;
+    justify-self: center;
+    width: 80%;
+}
+
+.task-title, .task-description, .task-due-date {
+    align-self: center;
 }
 
 .add-task {
@@ -176,7 +182,7 @@
 
 #form-button {
     background-color: var(--primary);
-    border-radius: 0.5rem;
+    border-radius: 0.2rem;
     border: 2px solid var(--primary);
     width: 60px;
     transition: 150ms;
@@ -189,13 +195,27 @@
 
 .form {
     display: flex;
-    flex: 1;
+    width: 100%;
+    font-size: 0.5rem;
     justify-content: space-between;
 }
 
-.input {
-    max-width: 100px;
-    min-width: none;
+.input, .select {
+    margin-right: 10px;
+    min-width: 100px;
+    background-color: transparent;
+    padding: 3px 5px;
+    border: 1px solid var(--black);
+    transition: 250ms;
+}
+
+.input:focus, .select:focus {
+    outline: none;
+    box-shadow: 2.5px 2.5px 1px 1px var(--gray);
+}
+
+.input[type="date"] {
+    min-width: 100px;
 }
 
 .select {
@@ -205,7 +225,7 @@
 .to-do-div {
     display: grid;
     width: 100%;
-    grid-template-columns: 2fr 3fr 1fr;
+    grid-template-columns: 2fr 3fr 1fr 0.25fr 0.25fr;
     font-size: 0.5rem;
     vertical-align: middle;
 }
@@ -214,4 +234,19 @@
     font-style: italic;
     font-size: 0.45rem;
     color: var(--gray);
+}
+
+.remove-button {
+    height: 20px;
+    align-self: center;
+    margin-left: 10px;
+    transition: 150ms;
+}
+
+.remove-button:hover {
+    height: 25px;
+}
+
+.checkbox {
+    height: 20px;
 }

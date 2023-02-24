@@ -19,15 +19,24 @@ class toDo {
         const title = document.createElement('p')
         const description = document.createElement('p')
         const dueDate = document.createElement('p')
+        const checkBox = document.createElement('input')
+        const removeButton = document.createElement('img')
 
         toDoDiv.appendChild(title)
         toDoDiv.appendChild(description)
         toDoDiv.appendChild(dueDate)
+        toDoDiv.appendChild(checkBox)
+        toDoDiv.appendChild(removeButton)
 
         title.classList.add('task-title')
         description.classList.add('task-description')
         dueDate.classList.add('task-due-date')
         toDoDiv.classList.add('to-do-div')
+        checkBox.classList.add('checkbox')
+        removeButton.classList.add('remove-button')
+
+        checkBox.setAttribute('type', 'checkbox')
+        removeButton.setAttribute('src', '/dist/iamges/delete_icon.png')
 
         title.textContent = this.title
         description.textContent = this.description
@@ -35,11 +44,34 @@ class toDo {
 
         formParent.replaceChild(toDoDiv, form)
 
+        this.status = checkBox.checked
+
         if (this.priority === 'Urgent') {
             toDoDiv.parentElement.style.backgroundColor = 'rgba(207, 0, 17, 0.33)'
         } else if (this.priority === 'Normal') {
             toDoDiv.parentElement.style.backgroundColor = 'rgba(207, 198, 35, 0.33)'
         }
+
+        checkBox.addEventListener('click', () => {
+            this.status = checkBox.checked
+            
+            if (this.status === true) {
+                toDoDiv.parentElement.style.backgroundColor = 'rgba(123, 247, 58, 0.33)'
+            } else {
+                if (this.priority === 'Urgent') {
+                    toDoDiv.parentElement.style.backgroundColor = 'rgba(207, 0, 17, 0.33)'
+                } else if (this.priority === 'Normal') {
+                    toDoDiv.parentElement.style.backgroundColor = 'rgba(207, 198, 35, 0.33)'
+                }
+            }
+        })
+
+        removeButton.addEventListener('click', () => {
+            const index = toDoList.indexOf(this)
+
+            toDoDiv.parentElement.remove()
+            toDoList.splice(index, 1)
+        })
     }
 }
 
@@ -58,7 +90,7 @@ const init = function() {
     
     text.textContent = '+ Add a Task'
 
-    text.addEventListener('click', () => {
+    addTask.addEventListener('click', () => {
         displayForm()
     })
 }
