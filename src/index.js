@@ -1,3 +1,5 @@
-import { init, displayForm, toDoList } from "./script";
+import { init, checkLocalStorage } from "./script";
+
+checkLocalStorage()
 
 init()

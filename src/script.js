@@ -1,8 +1,27 @@
 import { format } from 'date-fns'
 
-let toDoList = []
+let toDoList
 
 let projects = ['none', 'project 2']
+
+function checkLocalStorage() {
+    if (!localStorage.getItem('toDoListStorage')) {
+        toDoList = []
+    } else {
+        toDoList = getToDoList()
+        console.log(toDoList)
+    }
+}
+
+function getToDoList() {
+    return JSON.parse(localStorage.getItem('toDoListStorage'))
+}
+
+function setToDoList() {
+    const stringified = JSON.stringify(toDoList)
+
+    localStorage.setItem('toDoListStorage', stringified)
+}
 
 function getISOWeekNumber(date) {
     const dayOfWeek = date.getDay();
@@ -103,6 +122,9 @@ class toDo {
             toDoDiv.parentElement.remove()
             toDoList.splice(index, 1)
         })
+
+        setToDoList()
+        console.log(getToDoList())
     }
 }
 
@@ -391,4 +413,4 @@ const displayFormProject = function () {
     })
 }
 
-export { init, displayForm, toDoList }
+export { init, checkLocalStorage }
